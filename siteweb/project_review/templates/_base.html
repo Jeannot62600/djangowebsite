@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Meliodas - {% block title %} {% endblock %}</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Meliodas Projects">
+        <meta name="keywords" content="HTML,CSS,Django,Python,Projets">
+        <meta name="author" content="Meliodas">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% block meta %}{% endblock %}
+        <link rel="stylesheet" type="text/css" href="{% static 'project_review/simplegrid.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'project_review/ghost.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'project_review/style.css' %}">
+        <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> -->
+    </head>
+    <body class="home-template">
+        <header class="site-head">
+      			<div class="site-head-container">
+      				<div class="site-head-left">
+      					<h1 class="blog-title"><a href="/">Meliodas.fr</a></h1>
+                <h2 class="blog-description">Le site web de Jean Lapostolle</h2>
+      				</div>
+      				<div class="site-head-right">
+      				</div>
+      			</div>
+          </header>
+        {% block body %}{% endblock %}
+    </body>
+</html>

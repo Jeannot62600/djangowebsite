@@ -1,0 +1,28 @@
+{% extends "_base.html" %}
+
+{% block title %}
+Accueil
+{% endblock %}
+
+{% block body %}
+  <div class="grid grid-pad">
+    <h1 class="text-center">Accueil</h1>
+      <div class="col-1-1">
+        {% for part in parts %}
+          <article class="small-article">
+            <a href="/{{part.slug}}" title="{{ part.title }}">
+              <header>
+                <div class="thumbnail">
+
+                      <img class="" src="/media/{{part.picture}}">
+
+                </div>
+                <h4 class="text-center">{{part.title}}</h4>
+              </header>
+            </a>
+          </article>
+        {% endfor %}
+      </div>
+
+  </div>
+{% endblock %}

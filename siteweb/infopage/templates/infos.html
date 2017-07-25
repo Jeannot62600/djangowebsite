@@ -1,0 +1,32 @@
+{% extends "_base.html" %}
+
+{% block title %}
+Information
+{% endblock %}
+
+{% block body %}
+  <div class="grid grid-pad">
+    <h1 class="text-center">Information Publique</h1>
+      <hr/>
+    <div class="col-1-1">
+      {% for info in infos %}
+        {% if info.private == False %}
+          <div class="col-1-3">
+            <article class="small-article">
+              <a href="{% url 'infopage:info' info.slug %}" title="{{ info.title }}">
+                <header>
+                  <div class="thumbnail">
+
+                        <img class="" src="{{BASE_DIR}}/media/{{info.picture}}">
+
+                  </div>
+                  <h4 class="text-center">{{info.title}}</h4>
+                </header>
+              </a>
+            </article>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

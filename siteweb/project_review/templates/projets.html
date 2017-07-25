@@ -1,0 +1,30 @@
+{% extends "_base.html" %}
+
+{% block title %}
+Projets
+{% endblock %}
+
+{% block body %}
+  <div class="grid grid-pad">
+    <h1 class="text-center">Mes Projets</h1>
+      <hr/>
+    <div class="col-1-1">
+      {% for proj in projs %}
+      <div class="col-1-2">
+        <article class="small-article">
+          <a href="{% url 'project_review:proj' proj.slug %}" title="{{ proj.name_text_field }}">
+            <header>
+              <div class="thumbnail">
+
+                    <img class="" src="{{BASE_DIR}}/media/{{proj.picture}}">
+
+              </div>
+              <h4 class="text-center">{{proj.name_text_field}}</h4>
+            </header>
+          </a>
+        </article>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
