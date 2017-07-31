@@ -1,0 +1,18 @@
+{% extends "_base.html" %}
+
+{% block title %}
+Mes Groupes
+{% endblock %}
+
+{% block body %}
+  <ul>
+    {% for grup in user.groups.all %}
+      <li>
+        {{grup.name}}
+      </li>
+    {% empty %}
+    Vous ne faites parti d'aucun groupe.
+    {% endfor %}
+  </ul>
+  <a href="/deconnexion">Se deconnecter</a>
+{% endblock %}

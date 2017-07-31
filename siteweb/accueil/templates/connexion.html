@@ -1,0 +1,23 @@
+{% extends "_base.html" %}
+
+{% block title %}
+Se connecter
+{% endblock %}
+
+{% block body %}
+  {% if error %}
+  <p><strong>Utilisateur inexistant ou mauvais de mot de passe.</strong></p>
+  {% endif %}
+
+  {% if user.is_authenticated %}
+  Vous êtes connecté, {{ user.username }} !
+  Allez voir <a href="/site">vos groupes</a> ou <a href="/deconnexion">deconnectez-vous</a>
+  {% else %}
+  <form method="post" action=".">
+         {% csrf_token %}
+         {{ form.as_p }}
+         <a href="/inscription" class="subm">Inscrivez-vous !</a>
+      <input type="submit" class="sub"/>
+  </form>
+  {% endif %}
+{% endblock %}
